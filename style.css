@@ -1,101 +1,138 @@
+/* Basic Reset */
+* {
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #f0f0f0;
-    margin: 0;
-    padding: 20px;
-    transition: background 0.3s, color 0.3s;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  transition: all 0.3s ease;
 }
 
 body.dark {
-    background: #1c1c1c;
-    color: #f5f5f5;
+  background: linear-gradient(135deg, #121212, #2c2c2c);
+  color: #f5f5f5;
 }
 
+/* Container Styles */
 .container {
-    max-width: 700px;
-    margin: auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s;
+  max-width: 750px;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
 }
 
 body.dark .container {
-    background: #2c2c2c;
+  background: rgba(30, 30, 30, 0.95);
 }
 
-h1 {
-    text-align: center;
+/* Headers */
+h1, h2 {
+  text-align: center;
+  margin-bottom: 15px;
 }
 
-textarea, select, button, input[type=date] {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 6px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    transition: all 0.2s;
+/* Inputs */
+textarea, input[type="date"], input[type="email"], input[type="password"], select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background: #fdfdfd;
+  transition: 0.3s ease;
 }
 
+body.dark textarea,
+body.dark input,
+body.dark select {
+  background: #222;
+  color: #eee;
+  border-color: #444;
+}
+
+/* Buttons */
 button {
-    background: #4caf50;
-    color: white;
-    border: none;
-    cursor: pointer;
+  background-color: #6a89cc;
+  color: white;
+  padding: 12px;
+  margin-top: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
 button:hover {
-    background: #43a047;
+  background-color: #4a69bd;
 }
 
 #toggle-dark {
-    margin-bottom: 10px;
-    float: right;
-    background: #555;
+  background: #444;
+  margin-bottom: 20px;
+  float: right;
 }
 
+/* Entry display */
 .entry {
-    background: #e3f2fd;
-    padding: 15px;
-    margin-top: 20px;
-    border-radius: 10px;
-    animation: fadeIn 0.5s ease-in-out;
+  background: #f1f8e9;
+  padding: 15px;
+  margin-top: 20px;
+  border-left: 6px solid #81c784;
+  border-radius: 10px;
+  animation: fadeIn 0.5s ease-in;
 }
 
 body.dark .entry {
-    background: #37474f;
+  background: #37474f;
+  border-left-color: #4db6ac;
 }
 
-.prompt-box {
-    background: #e8f5e9;
-    padding: 10px;
-    border-left: 4px solid #4caf50;
-    border-radius: 6px;
-    margin-bottom: 10px;
+/* Auth Form */
+#auth-section {
+  max-width: 400px;
+  margin: auto;
+  background: rgba(255,255,255,0.95);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+body.dark #auth-section {
+  background: rgba(25,25,25,0.95);
 }
 
 .stats {
-    margin-top: 10px;
-    font-weight: bold;
+  font-weight: bold;
+  text-align: right;
+  margin-top: 10px;
+}
+
+.prompt-box {
+  background: #fff8e1;
+  border-left: 5px solid #ffd54f;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
 }
 
 body.dark .prompt-box {
-    background: #2e7d32;
-    color: #fff;
-    border-left-color: #81c784;
+  background: #3e2723;
+  color: #ffe082;
+  border-left-color: #ffca28;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
