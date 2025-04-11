@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Talk to Your Past/Future Self</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Talk to Your Past/Future Self</h1>
+        <button id="toggle-dark">Toggle Dark Mode</button>
+        <div class="prompt-box">
+            <h3>Feeling stuck? Try this:</h3>
+            <p id="prompt"></p>
+            <button onclick="newPrompt()">New Prompt</button>
+        </div>
+        <textarea id="entry" rows="5" placeholder="Dear Me..."></textarea>
+        <label for="customDate">Choose a delivery date:</label>
+        <input type="date" id="customDate" />
+        <label for="recordBtn">Record your voice:</label>
+        <button id="recordBtn">Start Recording</button>
+        <audio id="audioPlayer" controls style="display:none;"></audio>
+        <label for="direction">Select direction:</label>
+        <select id="direction">
+            <option value="future">To Future Self</option>
+            <option value="past">To Past Self</option>
+        </select>
+        <button onclick="saveEntry()">Save Entry</button>
+        <div class="stats">
+            <p>Total Entries: <span id="entryCount">0</span></p>
+        </div>
+        <div id="entries"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
